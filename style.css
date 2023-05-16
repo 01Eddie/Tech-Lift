@@ -17,7 +17,11 @@
     --white-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, .2)
 }
-
+.dark-mode{
+    --bg-color: #0b061f;
+    --text-color: #fdfdfd;
+    --shadow-color: rgba(0,0,0,.7)
+}
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -39,7 +43,6 @@ body {
     align-items: center;
     z-index: 100;
     transition: .5s;
-    background: lightpink;
 }
 
 .header.sticky {
@@ -170,7 +173,7 @@ section {
 
 .home .profession-container {
     position: absolute;
-    top: 50%;
+    top: 41%;
     right: 0;
     transform: translateY(-50%);
     width: 768px;
@@ -189,6 +192,25 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: professionRotate 13s ease-out infinite;
+}
+
+@keyframes professionRotate {
+    0%, 20%{
+        transform: rotate(0deg);
+    }
+    25%, 45%{
+        transform: rotate(-90deg);
+    }
+    50%, 70%{
+        transform: rotate(-180deg);
+    }
+    75%, 95%{
+        transform: rotate(-270deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
 }
 
 .home .profession-box .profession {
@@ -476,10 +498,11 @@ span {
     padding: 1.5rem;
     font-size: 1.6rem;
     color: var(--text-color);
-    background: var(--bg-color);
+    background: #f1f3f4;
     border-radius: .8rem;
     margin: .7rem 0;
     box-shadow: 0 .1rem .5rem var(--shadow-color);
+    border: none;
 }
 .contact form .input-box input{
     width: 49%;
@@ -645,7 +668,7 @@ span {
     }
     .home .profession-container .overlay{
         position: fixed;
-        top: 70rem;
+        top: 80rem;
         left: 50%;
         right: 0;
         transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
