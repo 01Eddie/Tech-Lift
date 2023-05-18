@@ -61,11 +61,60 @@ body {
 .navbar a {
     position: relative;
     font-size: 1.7rem;
-    color: var(--white-color);
+    color: #201d2c;
     font-weight: 500;
     margin-right: 3.5rem;
 }
-
+.navbar a.active::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: .2rem;
+    background: (--main-color);
+}
+.header.sticky .navbar a {
+    color: var(--text-color);
+}
+.navbar a{
+    font-size: 1.7rem;
+    color: #000;
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+.navbar a:hover,
+.navbar a.active{
+   color: var(--main-color);
+}
+.home-content .text-animate{
+    position: relative;
+    width: 32.8rem;
+}
+.home-content .text-animate h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: .7px var(--main-color);
+}
+.home-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;
+}
+.btn-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 34.5rem;
+    height: 5rem;
+}
+.btn-box .btn{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
 .header.sticky .navbar a {
     color: var(--text-color);
 }
@@ -170,16 +219,27 @@ section {
     color: var(--main-color);
     border-color: var(--main-color);
 }
-
 .home .profession-container {
     position: absolute;
     top: 41%;
     right: 0;
     transform: translateY(-50%);
-    width: 768px;
-    height: 768px;
+    width: 62vw;
+    height: 100%;
     overflow: hidden;
     pointer-events: none;
+    background: url(./assets/devImg.png);
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* width: 50vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(-50%); */
 }
 
 .home .profession-container .profession-box {
@@ -266,7 +326,7 @@ section {
 
 .home-img img {
     position: absolute;
-    bottom: 0;
+    bottom: 230px;
     right: 0;
     width: 30%;
     /* 100% */
